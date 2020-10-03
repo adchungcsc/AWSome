@@ -1,5 +1,5 @@
 # AWSome
-A serverless website that can be automatically deployed to AWS using CDK.
+A serverless website that can be automatically deployed to AWS using CDK. The front end is hosted in an s3 bucket while the backend is handled by lambda functions which will spin up on demand. Costs associated with running this site are low.
 
 *[Curent deployed site](http://adchungcsc.s3-website-us-east-1.amazonaws.com/)*
 
