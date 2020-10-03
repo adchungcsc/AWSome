@@ -1,5 +1,5 @@
 # AWSome
-A static website that can be automatically deployed to AWS using CDK.
+A serverless website that can be automatically deployed to AWS using CDK.
 
 *[Curent deployed site](http://adchungcsc.s3-website-us-east-1.amazonaws.com/)*
 
