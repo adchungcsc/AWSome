@@ -7,7 +7,10 @@ export class FrontendStack extends cdk.Stack {
     super(scope, id, props);
 
     // Setup s3 bucket to store static site in
+    // NOTE: Choose your own adventure with the bucketName s3 property. This MUST be unique as it becomes the subdomain of the URL.
+    // [SUBDOMAIN].s3-website-[REGION].amazonaws.com
     const websiteBucket = new s3.Bucket(this, 'website', {
+      bucketName: "adchungcsc",
       publicReadAccess: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       websiteIndexDocument: 'index.html',
