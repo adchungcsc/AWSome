@@ -8,12 +8,15 @@ export class BackendStack extends cdk.Stack {
         super(scope, id, props);
 
         const locationsDatabaseTable = new dynamodb.Table(this, "Locations",{
-            partitionKey: { name: "name", type: dynamodb.AttributeType.STRING },
+            partitionKey: { name: "LocationID", type: dynamodb.AttributeType.STRING },
+            sortKey: { name: "LocationName", type: dynamodb.AttributeType.STRING },
+            tableName: "Locations",
+
         });
 
         const locationsApiEndpointHandler = new lambda.Function(this, "LocationsAPIEndpointHandler", {
             runtime: lambda.Runtime.GO_1_X,
-            code: lambda.Code.fromAsset("functions"),
+            code: lambda.Code.fromAsset("../backend/api/function/handler.zip"),
             handler: "function.handler",
         });
 
